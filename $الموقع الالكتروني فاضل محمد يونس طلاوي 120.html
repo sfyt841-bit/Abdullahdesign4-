@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبدالله نجيب فاضل - مصمم جرافيك محترف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #666666;
+        }
+
+        body {
+            background: var(--secondary);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #cccccc;
+        }
+
+        /* الهيرو */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,255,255,0.2);
+        }
+
+        /* الخدمات */
+        .services {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--secondary);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* المعرض */
+        .portfolio {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .design-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .design-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #000000, #333333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        .design-info {
+            padding: 20px;
+        }
+
+        .design-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .design-info p {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* نموذج الطلبات */
+        .orders {
+            padding: 100px 0;
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: var(--primary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* الفوتر */
+        footer {
+            background: #111;
+            color: var(--secondary);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-section p {
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: #E1306C;
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cccccc;
+        }
+
+        .instagram-handle {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #cccccc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <nav class="nav-container">
+            <div class="brand">
+                <div class="brand-icon">A4</div>
+                <div class="logo">عبدالله نجيب</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#portfolio">معرض الأعمال</a></li>
+                <li><a href="#orders">طلب تصميم</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>عبدالله نجيب فاضل</h1>
+            <div class="subtitle">مصمم جرافيك محترف من العراق</div>
+            <p class="tagline">أبدع في تصميم الشعارات، الصور، الإعلانات، الفلاتر، وتعديل الفيديوهات</p>
+            <div class="cta-buttons">
+                <a href="#portfolio" class="cta-button">شاهد أعمالي</a>
+                <a href="#orders" class="cta-button outline">اطلب تصميم</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخدمات -->
+    <section id="services" class="services">
+        <h2 class="section-title">الخدمات المقدمة</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>تصميم الشعارات</h3>
+                <p>شعارات احترافية تعبر عن هوية markتك بشكل فريد ومميز</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🖼️</div>
+                <h3>تصميم الصور</h3>
+                <p>تصاميم صور إبداعية تناسب جميع الأغراض والمنصات</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📢</div>
+                <h3>الإعلانات</h3>
+                <p>تصميم إعلانات جذابة تلفت الانتباه وتحقق النتائج</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>الفلاتر</h3>
+                <p>تصميم فلاتر مخصصة لمنصات التواصل الاجتماعي</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>تعديل الفيديوهات</h3>
+                <p>مونتاج وتحرير فيديوهات احترافية بجودة عالية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- المعرض -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">معرض أعمالي</h2>
+        <div class="gallery">
+            <div class="design-card">
+                <div class="design-image">🔄</div>
+                <div class="design-info">
+                    <h3>شعار عصري</h3>
+                    <p>تصميم شعار حديث لعلامة تجارية</p>
+                </div>
+            </div>
+            <div class="design-card">
+                <div class="design-image">📱</div>
+                <div class="design-info">
+                    <h3>إعلان رقمي</h3>
+                    <p>تصميم إعلان لوسائل التواصل</p>
+                </div>
+            </div>
+            <div class="design-card">
+                <div class="design-image">🌟</div>
+                <div class="design-info">
+                    <h3>فلاتر إنستغرام</h3>
+                    <p>مجموعة فلاتر مخصصة</p>
+                </div>
+            </div>
+            <div class="design-card">
+                <div class="design-image">🎭</div>
+                <div class="design-info">
+                    <h3>هوية بصرية</h3>
+                    <p>تصميم هوية متكاملة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- طلبات التصميم -->
+    <section id="orders" class="orders">
+        <h2 class="section-title" style="color: white;">طلب تصميم مخصص</h2>
+        <form class="order-form" id="designForm">
+            <div class="form-group">
+                <label for="name">الاسم الكامل</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="instagram">حساب الإنستغرام (اختياري)</label>
+                <input type="text" id="instagram" name="instagram" placeholder="@username">
+            </div>
+            <div class="form-group">
+                <label for="designType">نوع التصميم المطلوب</label>
+                <select id="designType" name="designType" required>
+                    <option value="">اختر نوع التصميم</option>
+                    <option value="logo">شعار</option>
+                    <option value="image">تصميم صور</option>
+                    <option value="ad">إعلان</option>
+                    <option value="filter">فلاتر</option>
+                    <option value="video">تعديل فيديو</option>
+                    <option value="other">أخرى</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">وصف التصميم المطلوب</label>
+                <textarea id="description" name="description" placeholder="أخبرني عن فكرة التصميم الذي تريده، الألوان المفضلة، النمط، وأي تفاصيل أخرى..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">إرسال الطلب</button>
+        </form>
+    </section>
+
+    <!-- الفوتر -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عبدالله نجيب فاضل</h3>
+                <p>مصمم جرافيك محترف من العراق، متخصص في تصميم الشعارات، الصور، الإعلانات، الفلاتر، وتعديل الفيديوهات.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/4l8ki" target="_blank" title="حسابي الشخصي">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://instagram.com/4l8kd" target="_blank" title="حساب التصاميم">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:abdullah@example.com" title="البريد الإلكتروني">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" title="بيهانس">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-envelope"></i> 
+                        <span>abdullah.najib@example.com</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i> 
+                        <span>الحساب الشخصي: <span class="instagram-handle">@4l8ki</span></span>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i> 
+                        <span>حساب التصاميم: <span class="instagram-handle">@4l8kd</span></span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <span>العراق</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul class="contact-info">
+                    <li><a href="#home" style="color: #cccccc; text-decoration: none;">الرئيسية</a></li>
+                    <li><a href="#services" style="color: #cccccc; text-decoration: none;">الخدمات</a></li>
+                    <li><a href="#portfolio" style="color: #cccccc; text-decoration: none;">معرض الأعمال</a></li>
+                    <li><a href="#orders" style="color: #cccccc; text-decoration: none;">طلب تصميم</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 عبدالله نجيب فاضل. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // نموذج الطلبات
+        document.getElementById('designForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const 
